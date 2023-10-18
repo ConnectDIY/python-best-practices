@@ -1,0 +1,9 @@
+# Used by DynaConf
+ENV: DEV
+NAME: global-YAML-file
+PORT: 5050
+
+NESTED: {12: {'s': {'12-l2': 'l3-value'}},
+            'l1-1': {'l2-1': {'l3-1': 1}},
+            'l1-2': {'l2-2': {'l3-2': 'asb'}},
+            'l1-3': {'l2-3': {'l3-3': 'asd'}}}
