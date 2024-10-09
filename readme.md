@@ -1,1 +1,1 @@
-Python best practices in my opinion
+Python best practices, in my opinion

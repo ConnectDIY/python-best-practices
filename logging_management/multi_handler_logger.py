@@ -30,6 +30,11 @@ terminal_logger1 = logging.getLogger('you_tool_name')
 terminal_and_file_logger2 = logging.getLogger('you_tool_name.wp')
 terminal_and_file_logger2.propagate = False
 
+# That is highly important that logger also has Log level!
+#   Otherwise, logger will have default level = Warning and you loggers won't
+#   print messages even if they have DEBUG level
+terminal_and_file_logger2.setLevel(logging.DEBUG)
+
 # Configure Logger1
 log_level = logging.INFO
 terminal_logger1.setLevel(log_level)
@@ -40,7 +45,6 @@ terminal_logger1.addHandler(ch)  # Users logger
 
 
 # Configure Logger2
-terminal_and_file_logger2.setLevel(logging.DEBUG)
 file_formatter = logging.Formatter(cfg['FILE_LOG_FORMAT'])
 console_formatter = logging.Formatter(cfg['TERMINAL2_LOG_FORMAT'])
 ch = logging.StreamHandler()
